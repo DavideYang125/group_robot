@@ -1,5 +1,4 @@
-﻿using KaiKuo.Message.Api.Models.Result;
-using Wiwi.GroupRobot.Api.Api.Services;
+﻿using Wiwi.GroupRobot.Api.Api.Services;
 using Wiwi.GroupRobot.Api.Domain;
 using Wiwi.GroupRobot.Api.Enums;
 using Wiwi.GroupRobot.Api.Models;
@@ -105,7 +104,7 @@ namespace Wiwi.GroupRobot.Api.Services
             }
             var webhook = robot.WebHook;
             var payload = new PushWorkWechatGroupVm() { text = new PushWorkWechatGroupVm.TextInfo() { content = input.Message } };
-            var result = await _client.PostAsync<PushWorkWechatGroupVm, BaseWeChatResult>(webhook, payload);
+            var result = await _client.PostAsync<PushWorkWechatGroupVm, PushResult>(webhook, payload);
             if (result != null && result.ErrorCode == 0)
             {
                 return ApiResult.Success();
@@ -128,7 +127,7 @@ namespace Wiwi.GroupRobot.Api.Services
             var webhook = robot.WebHook;
             var payload = new PushDingGroupVm() { text = new PushDingGroupVm.TextInfo() { content = input.Message } };
 
-            var result = await _client.PostAsync<PushDingGroupVm, BaseWeChatResult>(webhook, payload);
+            var result = await _client.PostAsync<PushDingGroupVm, PushResult>(webhook, payload);
             if (result != null && result.ErrorCode == 0)
             {
                 return ApiResult.Success();

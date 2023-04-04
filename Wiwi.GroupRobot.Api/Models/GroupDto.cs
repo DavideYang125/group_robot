@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 using Wiwi.GroupRobot.Api.Enums;
 using Wiwi.GroupRobot.Common.Helper;
 
@@ -104,5 +105,20 @@ namespace Wiwi.GroupRobot.Api.Models
         /// 主键
         /// </summary>
         public string GroupRobotId { get; set; }
+    }
+
+    public class PushResult
+    {
+        /// <summary>
+        /// 错误码
+        /// </summary>
+        [JsonProperty("errcode")]
+        public int ErrorCode { get; set; }
+
+        /// <summary>
+        /// 错误信息
+        /// </summary>
+        [JsonProperty("errmsg")]
+        public string ErrorMessage { get; set; }
     }
 }
