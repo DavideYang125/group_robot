@@ -32,7 +32,7 @@ builder.Services.AddCors(options => options.AddPolicy("AllowCors",
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerSetup("KaiKuo.Message.Api.xml");
+builder.Services.AddSwaggerSetup();
 
 builder.Services.AddControllers(options =>
 {

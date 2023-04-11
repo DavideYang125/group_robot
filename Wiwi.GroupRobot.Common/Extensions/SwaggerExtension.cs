@@ -18,7 +18,7 @@ namespace Wiwi.GroupRobot.Common.Extensions
         /// </summary>
         /// <param name="services"></param>
         /// <exception cref="ArgumentNullException"></exception>
-        public static IServiceCollection AddSwaggerSetup(this IServiceCollection services, params string[] xmlFiles)
+        public static IServiceCollection AddSwaggerSetup(this IServiceCollection services)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
             //var config = Appsettings.GetConfig<ApiConfig>("ApiConfig");
